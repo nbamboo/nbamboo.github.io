@@ -399,6 +399,79 @@
 
 
   
+    <article id="post-Null不得不说的秘密" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/01/10/Null不得不说的秘密/">Null不得不说的秘密</a>
+    </h1>
+  
+
+        
+        <a href="/2014/01/10/Null不得不说的秘密/" class="archive-article-date">
+  	<time datetime="2014-01-09T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-大小写敏感"><a href="#1-大小写敏感" class="headerlink" title="1.大小写敏感"></a><strong><em>1.大小写敏感</em></strong></h5><p>首先，null是Java中的关键字，像public、static、final。它是大小写敏感的，你不能将null写成Null或NULL，编译器将不能识别它们然后报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object obj = NULL; // Not Ok</div><div class="line">Object obj1 = null; //Ok</div></pre></td></tr></table></figure>
+<h5 id="2-null是默认值"><a href="#2-null是默认值" class="headerlink" title="2.null是默认值"></a><strong><em>2.null是默认值</em></strong></h5><p>就像每种原始类型都有默认值一样，如int默认值为0，boolean的默认值为false，null是任何引用类型的默认值，不严格的说是所有object类型的默认值。就像你创建了一个布尔类型的变量，它将false作为自己的默认值，Java中的任何引用变量都将null作为默认值。这对所有变量都是适用的，如成员变量、局部变量、实例变量、静态变量（但当你使用一个没有初始化的局部变量，编译器会警告你）。为了证明这个事实，你可以通过创建一个变量然后打印它的值来观察这个引用变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">private static Object myObj;</div><div class="line">public static void main(String args[])&#123;</div><div class="line">    System.out.println(&quot;What is value of myObjc : &quot; + myObj);</div><div class="line">&#125;</div><div class="line">What is value of myObjc : null</div></pre></td></tr></table></figure>
+<h5 id="3-null是墙头草"><a href="#3-null是墙头草" class="headerlink" title="3.null是墙头草"></a><strong><em>3.null是墙头草</em></strong></h5><p>我们要澄清一些误解，null既不是对象也不是一种类型，它仅是一种特殊的值，你可以将其赋予任何引用类型，你也可以将null转化成任何类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">String str = null; // null can be assigned to String</div><div class="line">Integer itr = null; // you can assign null to Integer also</div><div class="line">Double dbl = null;  // null can also be assigned to Double</div><div class="line"> </div><div class="line">String myStr = (String) null; // null can be type cast to String</div><div class="line">Integer myItr = (Integer) null; // it can also be type casted to Integer</div><div class="line">Double myDbl = (Double) null; // yes it&apos;s possible, no error</div></pre></td></tr></table></figure>
+<h5 id="4-null也有它的底线"><a href="#4-null也有它的底线" class="headerlink" title="4.null也有它的底线"></a><strong><em>4.null也有它的底线</em></strong></h5><p>null可以赋值给引用变量，你不能将null赋给基本类型变量，例如int、double、float、boolean。如果你那样做了，编译器将会报错，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int i = null; // type mismatch : cannot convert from null to int</div><div class="line">short s = null; //  type mismatch : cannot convert from null to short</div><div class="line">byte b = null: // type mismatch : cannot convert from null to byte</div><div class="line">double d = null; //type mismatch : cannot convert from null to double</div><div class="line"> </div><div class="line">Integer itr = null; // this is ok</div><div class="line">int j = itr; // this is also ok, but NullPointerException at runtime</div></pre></td></tr></table></figure>
+<h5 id="5-null-null"><a href="#5-null-null" class="headerlink" title="5.null==null"></a><strong><em>5.null==null</em></strong></h5><p>你可以使用==或者!=操作来比较null值，但是不能使用其他算法或者逻辑操作，例如小于或者大于。跟SQL不一样，在Java中<code>null==null</code>将返回true，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line"> </div><div class="line">    public static void main(String args[]) throws InterruptedException &#123;</div><div class="line"> </div><div class="line">       String abc = null;</div><div class="line">       String cde = null;</div><div class="line"> </div><div class="line">       if(abc == cde)&#123;</div><div class="line">           System.out.println(&quot;null == null is true in Java&quot;);</div><div class="line">       &#125;</div><div class="line"> </div><div class="line">       if(null != null)&#123;</div><div class="line">           System.out.println(&quot;null != null is false in Java&quot;); </div><div class="line">       &#125;</div><div class="line"> </div><div class="line">       // classical null check</div><div class="line">       if(abc == null)&#123;</div><div class="line">           // do something</div><div class="line">       &#125;</div><div class="line"> </div><div class="line">       // not ok, compile time error</div><div class="line">       if(abc &gt; null)&#123;</div><div class="line"> </div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">输出：</div><div class="line">null == null is true in Java</div></pre></td></tr></table></figure>
+<h5 id="6-静态方法和非静态方法差别对待"><a href="#6-静态方法和非静态方法差别对待" class="headerlink" title="6.静态方法和非静态方法差别对待"></a><strong><em>6.静态方法和非静态方法差别对待</em></strong></h5><p>你可能知道不能调用非静态方法来使用一个值为null的引用类型变量。它将会抛出空指针异常，但是你可能不知道，你可以使用静态方法来使用一个值为null的引用类型变量。因为静态方法使用静态绑定，不会抛出空指针异常。下面是一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public class Testing &#123;             </div><div class="line">   public static void main(String args[])&#123;</div><div class="line">      Testing myObject = null;</div><div class="line">      myObject.iAmStaticMethod();</div><div class="line">      myObject.iAmNonStaticMethod();                             </div><div class="line">   &#125;</div><div class="line"> </div><div class="line">   private static void iAmStaticMethod()&#123;</div><div class="line">        System.out.println(&quot;I am static method, can be called by null reference&quot;);</div><div class="line">   &#125;</div><div class="line"> </div><div class="line">   private void iAmNonStaticMethod()&#123;</div><div class="line">       System.out.println(&quot;I am NON static method, don&apos;t date to call me by null&quot;);</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">输出：</div><div class="line">I am static method, can be called by null reference</div><div class="line">Exception in thread &quot;main&quot; java.lang.NullPointerException at Testing.main(Testing.java:11)</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2014/01/10/Null不得不说的秘密/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Java中的堆和栈的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
