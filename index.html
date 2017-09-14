@@ -326,6 +326,72 @@
 
 
   
+    <article id="post-Java中的堆和栈的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/09/14/Java中的堆和栈的区别/">Java中的堆和栈的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2013/09/14/Java中的堆和栈的区别/" class="archive-article-date">
+  	<time datetime="2013-09-14T14:41:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2013-09-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当一个人开始学习Java或者其他编程语言的时候，会接触到堆和栈，由于一开始没有明确清晰的说明解释，很多人会产生很多疑问，什么是堆，什么是栈，堆和栈有什么区别？更糟糕的是，Java中存在栈这样一个后进先出（Last In First Out）的顺序的数据结构，这就是java.util.Stack。这种情况下，不免让很多人更加费解前面的问题。事实上，堆和栈都是内存中的一部分，有着不同的作用，而且一个程序需要在这片区域上分配内存。众所周知，所有的Java程序都运行在JVM虚拟机内部，我们这里介绍的自然是JVM（虚拟）内存中的堆和栈。</p>
+<h5 id="1-一句话"><a href="#1-一句话" class="headerlink" title="1.一句话"></a><strong><em>1.一句话</em></strong></h5><p>最主要的区别就是栈内存用来存储局部变量和方法调用。<br>而堆内存用来存储Java中的对象。无论是成员变量，局部变量，还是类变量，它们指向的对象都存储在堆内存中。</p>
+<h5 id="2-独有or共享"><a href="#2-独有or共享" class="headerlink" title="2.独有or共享"></a><strong><em>2.独有or共享</em></strong></h5><p>栈内存归属于单个线程，每个线程都会有一个栈内存，其存储的变量只能在其所属线程中可见，即栈内存可以理解成线程的私有内存。而堆内存中的对象对所有线程可见。堆内存中的对象可以被所有线程访问。</p>
+<h5 id="3-异常错误"><a href="#3-异常错误" class="headerlink" title="3.异常错误"></a><strong><em>3.异常错误</em></strong></h5><p>如果栈内存没有可用的空间存储方法调用和局部变量，JVM会抛出java.lang.StackOverFlowError。<br>而如果是堆内存没有可用的空间存储生成的对象，JVM会抛出java.lang.OutOfMemoryError。</p>
+<h5 id="4-空间大小"><a href="#4-空间大小" class="headerlink" title="4.空间大小"></a><strong><em>4.空间大小</em></strong></h5><p>栈的内存要远远小于堆内存，如果你使用递归的话，那么你的栈很快就会充满。如果递归没有及时跳出，很可能发生StackOverFlowError问题。<br>你可以通过-Xss选项设置栈内存的大小。-Xms选项可以设置堆的开始时的大小，-Xmx选项可以设置堆的最大值。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2013/09/14/Java中的堆和栈的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
   
 
 
@@ -408,6 +474,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
