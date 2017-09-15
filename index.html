@@ -472,6 +472,87 @@
 
 
   
+    <article id="post-override VS overload" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/01/10/override VS overload/">override vs overload</a>
+    </h1>
+  
+
+        
+        <a href="/2014/01/10/override VS overload/" class="archive-article-date">
+  	<time datetime="2014-01-09T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-重写（override）"><a href="#1-重写（override）" class="headerlink" title="1.重写（override）"></a><strong><em>1.重写（override）</em></strong></h5><blockquote>
+<p>override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.</p>
+</blockquote>
+<ul>
+<li>重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.</li>
+<li>重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&gt;protected&gt;default&gt;private)。</li>
+<li>重写的方法的返回值必须和被重写的方法的返回一致；</li>
+<li>重写的方法所抛出的异常必须和被重写方法的所抛出的异常一致，或者是其子类；</li>
+<li>被重写的方法不能为private，否则在其子类中只是新定义了一个方法，并没s有对其进行重写。</li>
+<li>静态方法不能被重写为非静态的方法（会编译出错）。</li>
+</ul>
+<h5 id="2-重载（overload）"><a href="#2-重载（overload）" class="headerlink" title="2.重载（overload）"></a><strong><em>2.重载（overload）</em></strong></h5><blockquote>
+<p>方法重载是让类以统一的方式处理不同类型数据的一种手段。多个同名函数同时存在，具有不同的参数个数/类型。重载是一个类中多态性的一种表现。</p>
+</blockquote>
+<ul>
+<li>必须具有不同的参数列表；</li>
+<li>可以有不同的返回类型，只要参数列表不同就可以了；</li>
+<li>可以有不同的访问修饰符；</li>
+<li>可以抛出不同的异常；</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2014/01/10/override VS overload/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Java中的堆和栈的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -619,7 +700,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,7 +708,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
             
             <div class="clearfix"></div>

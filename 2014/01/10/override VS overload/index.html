@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: MyBatis | nbamboo的博客</title>
+  <title>override vs overload | nbamboo的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="nbamboo的博客">
-<meta property="og:url" content="http://yoursite.com/tags/MyBatis/index.html">
+  <meta name="description" content="1.重写（override） override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.   重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载. 重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&amp;gt;protected">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="override vs overload">
+<meta property="og:url" content="http://yoursite.com/2014/01/10/override VS overload/index.html">
 <meta property="og:site_name" content="nbamboo的博客">
+<meta property="og:description" content="1.重写（override） override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.   重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载. 重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&amp;gt;protected">
+<meta property="og:updated_time" content="2017-09-15T03:10:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nbamboo的博客">
+<meta name="twitter:title" content="override vs overload">
+<meta name="twitter:description" content="1.重写（override） override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.   重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载. 重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&amp;gt;protected">
   
     <link rel="alternative" href="/atom.xml" title="nbamboo的博客" type="application/atom+xml">
   
@@ -145,60 +150,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-override VS overload" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/10/Idea-for-mac-MyBatis-plugin破解/" class="archive-article-date">
-  	<time datetime="2016-01-09T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/10/Idea-for-mac-MyBatis-plugin破解/">Idea for mac  MyBatis-plugin破解</a>
+    <h1 class="article-title" itemprop="name">
+      override vs overload
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2014/01/10/override VS overload/" class="archive-article-date">
+  	<time datetime="2014-01-09T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-重写（override）"><a href="#1-重写（override）" class="headerlink" title="1.重写（override）"></a><strong><em>1.重写（override）</em></strong></h5><blockquote>
+<p>override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.</p>
+</blockquote>
+<ul>
+<li>重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.</li>
+<li>重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&gt;protected&gt;default&gt;private)。</li>
+<li>重写的方法的返回值必须和被重写的方法的返回一致；</li>
+<li>重写的方法所抛出的异常必须和被重写方法的所抛出的异常一致，或者是其子类；</li>
+<li>被重写的方法不能为private，否则在其子类中只是新定义了一个方法，并没s有对其进行重写。</li>
+<li>静态方法不能被重写为非静态的方法（会编译出错）。</li>
+</ul>
+<h5 id="2-重载（overload）"><a href="#2-重载（overload）" class="headerlink" title="2.重载（overload）"></a><strong><em>2.重载（overload）</em></strong></h5><blockquote>
+<p>方法重载是让类以统一的方式处理不同类型数据的一种手段。多个同名函数同时存在，具有不同的参数个数/类型。重载是一个类中多态性的一种表现。</p>
+</blockquote>
+<ul>
+<li>必须具有不同的参数列表；</li>
+<li>可以有不同的返回类型，只要参数列表不同就可以了；</li>
+<li>可以有不同的访问修饰符；</li>
+<li>可以抛出不同的异常；</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>老铁双击666！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MyBatis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2014/01/10/override VS overload/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2014/01/10/Null不得不说的秘密/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Null不得不说的秘密
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2015/09/09/Node-js更新后npm无法正常运行的一种解决方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js更新后npm无法正常运行的一种解决方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -221,9 +353,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
