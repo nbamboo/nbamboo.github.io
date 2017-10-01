@@ -286,6 +286,73 @@
 
 
   
+    <article id="post-Java跨平台原理 " class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/09/Java跨平台原理 /">Java跨平台原理</a>
+    </h1>
+  
+
+        
+        <a href="/2016/01/09/Java跨平台原理 /" class="archive-article-date">
+  	<time datetime="2016-01-08T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-什么是平台"><a href="#1-什么是平台" class="headerlink" title="1.什么是平台"></a><strong><em>1.什么是平台</em></strong></h5><blockquote>
+<p>&emsp;&emsp;Java是可以跨平台的编程语言，那我们首先得知道什么是平台，我们把CPU处理器与操作系统的整体叫平台。<br>&emsp;&emsp;CPU大家都知道，如果计算机是人,那CPU就是人的大脑，它既负责思维运算，又负责身体各部件的命令控制。CPU的种类很多，除去我们熟知的Intel与AMD外，还有比如上面说到的SUN的Sparc,比如IBM的PowerPC等等，这些各个公司生产的CPU使用或相同或不同的指令集。指令集就是cpu中用来计算和控制计算机系统的一套指令的集合。指令集又分为精简指令集（RISC）与复杂指令集(CISC)，每种cpu都有其特定的指令集。开发程序，首先要知道该程序在什么CPU上运行,也就是要知道CPU所使用的指令集。<br>&emsp;&emsp;下面说操作系统，操作系统是充当用户和计算机之间交互的界面软件，不同的操作系统支持不同的CPU，严格意义上说是不同的操作系统支持不同CPU的指令集。例如  windows和liunx都支持Intel和AMD的复杂指令集，但并不支持PowerPC所使用的精简指令集，而早期的MAC电脑使用的是PowerPC处理器，所以也就无法在MAC下直接安装windows,直到05年MAC改用了Intel的CPU,才使在MAC下安装windows成为可能。但问题来了，原来的MAC 操作系统也只支持PowerPC,在Intel上也不能安装，怎么办？所以苹果公司也得重写自己的MAC操作系统以支持这种变化。最后总结下，我们要知道，不同的操作系统支持不同的CPU指令集，现在的windows,liunx,mac,solaris都支持Intel与AMD的CPU指令集。<br>&emsp;&emsp;有了上面的铺垫，旺旺老师就要告诉大家，如果您要开发程序，首先应该确定：1，CPU类型，也就是指令集类型；2，操作系统；我们把这种软硬件的结合叫平台。也可以说“平台= CPU+OS”。又因为现在主流的操作系统都支持主流的CPU，所以有时也把操作系统称为平台。<br>&emsp;&emsp;知道什么是平台，我们看Java跨平台原理。</p>
+</blockquote>
+<h5 id="2-Java跨平台原理"><a href="#2-Java跨平台原理" class="headerlink" title="2.Java跨平台原理"></a><strong><em>2.Java跨平台原理</em></strong></h5><blockquote>
+<p>&emsp;&emsp;Java的一大特色就是“write once, run anywhere”即“一次编译，到处运行”。就是说你不用专门为每个平台写一份代码，你写的Java程序在任何平台都能跑起来。<br>&emsp;&emsp;它的实现原理是在系统层面上又增加了一层虚拟机（Java Virtual Machine，简称JVM），且为每个平台都定制了对应的虚拟机。然后Java程序是在虚拟机上跑的，因此平台无关。<br>&emsp;&emsp;Java的运行流程是：程序员写了源代码（Source Code，.java后缀，跨平台），然后经过编译器编译成字节码（Byte Code，.class后缀，二进制文件，跨平台），字节码是所有虚拟机都能理解的中间文件。然后交给虚拟机（不跨平台，每个平台都有对应的虚拟机）去运行。<br>&emsp;&emsp;所以对“write once, run anywhere”更准确的理解是，“一次编译，到处装虚拟机，所以到处运行”。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/01/09/Java跨平台原理 /">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo+github+MWeb+七牛" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -700,15 +767,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
             
             <div class="clearfix"></div>

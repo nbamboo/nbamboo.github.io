@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2013 | nbamboo的博客</title>
+  <title>Java跨平台原理 | nbamboo的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="nbamboo的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2013/index.html">
+  <meta name="description" content="1.什么是平台 &amp;emsp;&amp;emsp;Java是可以跨平台的编程语言，那我们首先得知道什么是平台，我们把CPU处理器与操作系统的整体叫平台。&amp;emsp;&amp;emsp;CPU大家都知道，如果计算机是人,那CPU就是人的大脑，它既负责思维运算，又负责身体各部件的命令控制。CPU的种类很多，除去我们熟知的Intel与AMD外，还有比如上面说到的SUN的Sparc,比如IBM的PowerPC等等，这些各个">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java跨平台原理">
+<meta property="og:url" content="http://yoursite.com/2016/01/09/Java跨平台原理 /index.html">
 <meta property="og:site_name" content="nbamboo的博客">
+<meta property="og:description" content="1.什么是平台 &amp;emsp;&amp;emsp;Java是可以跨平台的编程语言，那我们首先得知道什么是平台，我们把CPU处理器与操作系统的整体叫平台。&amp;emsp;&amp;emsp;CPU大家都知道，如果计算机是人,那CPU就是人的大脑，它既负责思维运算，又负责身体各部件的命令控制。CPU的种类很多，除去我们熟知的Intel与AMD外，还有比如上面说到的SUN的Sparc,比如IBM的PowerPC等等，这些各个">
+<meta property="og:updated_time" content="2017-10-01T12:16:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nbamboo的博客">
+<meta name="twitter:title" content="Java跨平台原理">
+<meta name="twitter:description" content="1.什么是平台 &amp;emsp;&amp;emsp;Java是可以跨平台的编程语言，那我们首先得知道什么是平台，我们把CPU处理器与操作系统的整体叫平台。&amp;emsp;&amp;emsp;CPU大家都知道，如果计算机是人,那CPU就是人的大脑，它既负责思维运算，又负责身体各部件的命令控制。CPU的种类很多，除去我们熟知的Intel与AMD外，还有比如上面说到的SUN的Sparc,比如IBM的PowerPC等等，这些各个">
   
     <link rel="alternative" href="/atom.xml" title="nbamboo的博客" type="application/atom+xml">
   
@@ -145,36 +150,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java跨平台原理 " class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2013" class="archive-year">2013</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2013/09/14/Java中的堆和栈的区别/" class="archive-article-date">
-  	<time datetime="2013-09-14T14:41:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2013-09-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2013/09/14/Java中的堆和栈的区别/">Java中的堆和栈的区别</a>
+    <h1 class="article-title" itemprop="name">
+      Java跨平台原理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016/01/09/Java跨平台原理 /" class="archive-article-date">
+  	<time datetime="2016-01-08T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-什么是平台"><a href="#1-什么是平台" class="headerlink" title="1.什么是平台"></a><strong><em>1.什么是平台</em></strong></h5><blockquote>
+<p>&emsp;&emsp;Java是可以跨平台的编程语言，那我们首先得知道什么是平台，我们把CPU处理器与操作系统的整体叫平台。<br>&emsp;&emsp;CPU大家都知道，如果计算机是人,那CPU就是人的大脑，它既负责思维运算，又负责身体各部件的命令控制。CPU的种类很多，除去我们熟知的Intel与AMD外，还有比如上面说到的SUN的Sparc,比如IBM的PowerPC等等，这些各个公司生产的CPU使用或相同或不同的指令集。指令集就是cpu中用来计算和控制计算机系统的一套指令的集合。指令集又分为精简指令集（RISC）与复杂指令集(CISC)，每种cpu都有其特定的指令集。开发程序，首先要知道该程序在什么CPU上运行,也就是要知道CPU所使用的指令集。<br>&emsp;&emsp;下面说操作系统，操作系统是充当用户和计算机之间交互的界面软件，不同的操作系统支持不同的CPU，严格意义上说是不同的操作系统支持不同CPU的指令集。例如  windows和liunx都支持Intel和AMD的复杂指令集，但并不支持PowerPC所使用的精简指令集，而早期的MAC电脑使用的是PowerPC处理器，所以也就无法在MAC下直接安装windows,直到05年MAC改用了Intel的CPU,才使在MAC下安装windows成为可能。但问题来了，原来的MAC 操作系统也只支持PowerPC,在Intel上也不能安装，怎么办？所以苹果公司也得重写自己的MAC操作系统以支持这种变化。最后总结下，我们要知道，不同的操作系统支持不同的CPU指令集，现在的windows,liunx,mac,solaris都支持Intel与AMD的CPU指令集。<br>&emsp;&emsp;有了上面的铺垫，旺旺老师就要告诉大家，如果您要开发程序，首先应该确定：1，CPU类型，也就是指令集类型；2，操作系统；我们把这种软硬件的结合叫平台。也可以说“平台= CPU+OS”。又因为现在主流的操作系统都支持主流的CPU，所以有时也把操作系统称为平台。<br>&emsp;&emsp;知道什么是平台，我们看Java跨平台原理。</p>
+</blockquote>
+<h5 id="2-Java跨平台原理"><a href="#2-Java跨平台原理" class="headerlink" title="2.Java跨平台原理"></a><strong><em>2.Java跨平台原理</em></strong></h5><blockquote>
+<p>&emsp;&emsp;Java的一大特色就是“write once, run anywhere”即“一次编译，到处运行”。就是说你不用专门为每个平台写一份代码，你写的Java程序在任何平台都能跑起来。<br>&emsp;&emsp;它的实现原理是在系统层面上又增加了一层虚拟机（Java Virtual Machine，简称JVM），且为每个平台都定制了对应的虚拟机。然后Java程序是在虚拟机上跑的，因此平台无关。<br>&emsp;&emsp;Java的运行流程是：程序员写了源代码（Source Code，.java后缀，跨平台），然后经过编译器编译成字节码（Byte Code，.class后缀，二进制文件，跨平台），字节码是所有虚拟机都能理解的中间文件。然后交给虚拟机（不跨平台，每个平台都有对应的虚拟机）去运行。<br>&emsp;&emsp;所以对“write once, run anywhere”更准确的理解是，“一次编译，到处装虚拟机，所以到处运行”。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>老铁双击666！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,19 +226,97 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/01/09/Java跨平台原理 /" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2015/09/10/hexo+github+MWeb+七牛/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hexo+Github+MWeb+七牛：个人博客搭建攻略（for mac）
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2016/01/10/Idea-for-mac-MyBatis-plugin破解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Idea for mac  MyBatis-plugin破解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -221,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
