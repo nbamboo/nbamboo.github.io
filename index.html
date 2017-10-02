@@ -242,7 +242,7 @@
       
         <h5 id="1-抽象类"><a href="#1-抽象类" class="headerlink" title="1.抽象类"></a><strong><em>1.抽象类</em></strong></h5><p>&emsp;&emsp;抽象类是用来描述抽象行为的，比如Animal，我们不知道Animal具体有会有什么样的行为，只有具体的动物类，如Dog，Cat才有具体的行为，才能够被实例化。抽象类是实现多态的一种机制，它可以包含具体方法（有具体实现的方法），也可以包含抽象方法，而继承它的子类必须实现这些方法，下面总结了一下抽象类的特性：</p>
 <ol>
-<li>能被实例化，但可以有构造函数</li>
+<li>不能被实例化，但可以有构造函数</li>
 <li>抽象方法必须由子类进行重写</li>
 <li>只要包含一个抽象方法的类，就必须定义为抽象类，不管是否还包含其他方法</li>
 <li>抽象类中可以包含具体的方法，也可以不包含抽象方法</li>
@@ -853,15 +853,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
             
             <div class="clearfix"></div>
