@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>override vs overload | nbamboo的博客</title>
+  <title>java之线程与进程 | nbamboo的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.重写（override） override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.   重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载. 重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&amp;gt;protected">
+  <meta name="description" content="一.进程和线程1. 举个例子&amp;emsp;&amp;emsp;开个QQ，开了一个进程；开了迅雷，开了一个进程。在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”分别有一个线程。所以一个进程管着多个线程。通俗的讲：“进程是爹妈，管着众多的线程儿子”">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="override vs overload">
-<meta property="og:url" content="http://yoursite.com/2014/01/10/override VS overload/index.html">
+<meta property="og:title" content="java之线程与进程">
+<meta property="og:url" content="http://yoursite.com/2016/02/10/java之线程与进程/index.html">
 <meta property="og:site_name" content="nbamboo的博客">
-<meta property="og:description" content="1.重写（override） override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.   重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载. 重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&amp;gt;protected">
-<meta property="og:updated_time" content="2017-09-15T03:10:15.000Z">
+<meta property="og:description" content="一.进程和线程1. 举个例子&amp;emsp;&amp;emsp;开个QQ，开了一个进程；开了迅雷，开了一个进程。在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”分别有一个线程。所以一个进程管着多个线程。通俗的讲：“进程是爹妈，管着众多的线程儿子”">
+<meta property="og:updated_time" content="2017-10-03T12:22:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="override vs overload">
-<meta name="twitter:description" content="1.重写（override） override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.   重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载. 重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&amp;gt;protected">
+<meta name="twitter:title" content="java之线程与进程">
+<meta name="twitter:description" content="一.进程和线程1. 举个例子&amp;emsp;&amp;emsp;开个QQ，开了一个进程；开了迅雷，开了一个进程。在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”分别有一个线程。所以一个进程管着多个线程。通俗的讲：“进程是爹妈，管着众多的线程儿子”">
   
     <link rel="alternative" href="/atom.xml" title="nbamboo的博客" type="application/atom+xml">
   
@@ -150,47 +150,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-override VS overload" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java之线程与进程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      override vs overload
+      java之线程与进程
     </h1>
   
 
         
-        <a href="/2014/01/10/override VS overload/" class="archive-article-date">
-  	<time datetime="2014-01-09T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-01-10</time>
+        <a href="/2016/02/10/java之线程与进程/" class="archive-article-date">
+  	<time datetime="2016-02-09T17:39:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1-重写（override）"><a href="#1-重写（override）" class="headerlink" title="1.重写（override）"></a><strong><em>1.重写（override）</em></strong></h5><blockquote>
-<p>override是重写（覆盖）了一个方法，以实现不同的功能。一般是用于子类在继承父类时，重写（重新实现）父类中的方法。重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.</p>
-</blockquote>
-<ul>
-<li>重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.</li>
-<li>重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&gt;protected&gt;default&gt;private)。</li>
-<li>重写的方法的返回值必须和被重写的方法的返回一致；</li>
-<li>重写的方法所抛出的异常必须和被重写方法的所抛出的异常一致，或者是其子类；</li>
-<li>被重写的方法不能为private，否则在其子类中只是新定义了一个方法，并没s有对其进行重写。</li>
-<li>静态方法不能被重写为非静态的方法（会编译出错）。</li>
-</ul>
-<h5 id="2-重载（overload）"><a href="#2-重载（overload）" class="headerlink" title="2.重载（overload）"></a><strong><em>2.重载（overload）</em></strong></h5><blockquote>
-<p>方法重载是让类以统一的方式处理不同类型数据的一种手段。多个同名函数同时存在，具有不同的参数个数/类型。重载是一个类中多态性的一种表现。</p>
-</blockquote>
-<ul>
-<li>必须具有不同的参数列表；</li>
-<li>可以有不同的返回类型，只要参数列表不同就可以了；</li>
-<li>可以有不同的访问修饰符；</li>
-<li>可以抛出不同的异常；</li>
-</ul>
-
+        <h4 id="一-进程和线程"><a href="#一-进程和线程" class="headerlink" title="一.进程和线程"></a>一.进程和线程</h4><h6 id="1-举个例子"><a href="#1-举个例子" class="headerlink" title="1. 举个例子"></a>1. 举个例子</h6><p>&emsp;&emsp;开个QQ，开了一个进程；开了迅雷，开了一个进程。在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”分别有一个线程。所以一个进程管着多个线程。通俗的讲：“进程是爹妈，管着众多的线程儿子”。<br>&emsp;&emsp;</p>
+<h5 id="二"><a href="#二" class="headerlink" title="二."></a><strong><em>二.</em></strong></h5><h5 id="3"><a href="#3" class="headerlink" title="3."></a><strong><em>3.</em></strong></h5><h5 id="4"><a href="#4" class="headerlink" title="4."></a><strong><em>4.</em></strong></h5><h5 id="5"><a href="#5" class="headerlink" title="5."></a><strong><em>5.</em></strong></h5><h5 id="6"><a href="#6" class="headerlink" title="6."></a><strong><em>6.</em></strong></h5><h5 id="7"><a href="#7" class="headerlink" title="7."></a><strong><em>7.</em></strong></h5><h5 id="8"><a href="#8" class="headerlink" title="8."></a><strong><em>8.</em></strong></h5><h5 id="9"><a href="#9" class="headerlink" title="9."></a><strong><em>9.</em></strong></h5><h5 id="10"><a href="#10" class="headerlink" title="10."></a><strong><em>10.</em></strong></h5>
       
 
       
@@ -290,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2014/01/10/override VS overload/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/02/10/java之线程与进程/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +285,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2014/01/10/Null不得不说的秘密/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/15/抽象类和接口/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Null不得不说的秘密
+          抽象类和接口
         
       </div>
     </a>
   
   
-    <a href="/2015/09/09/Node-js更新后npm无法正常运行的一种解决方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node.js更新后npm无法正常运行的一种解决方法</div>
+    <a href="/2017/09/14/equals-和-的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">equals 和 == 的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
