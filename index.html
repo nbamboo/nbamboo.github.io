@@ -240,8 +240,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="一-进程和线程"><a href="#一-进程和线程" class="headerlink" title="一.进程和线程"></a>一.进程和线程</h4><h6 id="1-举个例子"><a href="#1-举个例子" class="headerlink" title="1. 举个例子"></a>1. 举个例子</h6><p>&emsp;&emsp;开个QQ，开了一个进程；开了迅雷，开了一个进程。在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”分别有一个线程。所以一个进程管着多个线程。通俗的讲：“进程是爹妈，管着众多的线程儿子”。<br>&emsp;&emsp;</p>
-<h5 id="二"><a href="#二" class="headerlink" title="二."></a><strong><em>二.</em></strong></h5><h5 id="3"><a href="#3" class="headerlink" title="3."></a><strong><em>3.</em></strong></h5><h5 id="4"><a href="#4" class="headerlink" title="4."></a><strong><em>4.</em></strong></h5><h5 id="5"><a href="#5" class="headerlink" title="5."></a><strong><em>5.</em></strong></h5><h5 id="6"><a href="#6" class="headerlink" title="6."></a><strong><em>6.</em></strong></h5><h5 id="7"><a href="#7" class="headerlink" title="7."></a><strong><em>7.</em></strong></h5><h5 id="8"><a href="#8" class="headerlink" title="8."></a><strong><em>8.</em></strong></h5><h5 id="9"><a href="#9" class="headerlink" title="9."></a><strong><em>9.</em></strong></h5><h5 id="10"><a href="#10" class="headerlink" title="10."></a><strong><em>10.</em></strong></h5>
+        <h4 id="一-进程和线程"><a href="#一-进程和线程" class="headerlink" title="一.进程和线程"></a>一.进程和线程</h4><h6 id="1-举个例子"><a href="#1-举个例子" class="headerlink" title="1. 举个例子"></a>1. 举个例子</h6><p>&emsp;&emsp;开个QQ，开了一个进程；开了迅雷，开了一个进程。在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”分别有一个线程。所以一个进程管着多个线程。通俗的讲：“进程是爹妈，管着众多的线程儿子”。</p>
+<h6 id="2-区别"><a href="#2-区别" class="headerlink" title="2. 区别"></a>2. 区别</h6><p>&emsp;&emsp;进程是执行着的应用程序，而线程是进程内部的一个执行序列。一个进程可以有多个线程。线程又叫做轻量级进程。<br>&emsp;&emsp;进程是分配资源的基本单位，而线程是独立运行和调度的基本单位。线程的划分小于进程，线程隶属于某个进程。 进程是程序的一种动态形式，是CPU、内存等资源占用的基本单位，而线程是不能占有这些资源的。<br>&emsp;&emsp;进程之间相互独立，通信比较困难，而线程之间共享一块内存区域，通信比较方便。 进程在执行的过程中，包含比较固定的入口，执行顺序，出口，而线程的这些过程会被应用程序所控制</p>
+<h5 id="二-线程的创建方式"><a href="#二-线程的创建方式" class="headerlink" title="二.线程的创建方式"></a>二.线程的创建方式</h5><h6 id="1-继承Thread类"><a href="#1-继承Thread类" class="headerlink" title="1. 继承Thread类"></a>1. 继承Thread类</h6><p>直接定义一个Thread的子类并实例化，从而创建一个新线程。通过start创建线程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class MyThread extends Thread &#123; </div><div class="line">  public void run() &#123; </div><div class="line">    //这里是线程要执行的任务 </div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">MyThread myThread=new MyThread();</div></pre></td></tr></table></figure>
+<h6 id="2-实现-Runnable-接口"><a href="#2-实现-Runnable-接口" class="headerlink" title="2. 实现 Runnable 接口"></a>2. 实现 Runnable 接口</h6><p>实现 Runnable 接口，把 Runnable 作为参数传入 Thread 的构造函数，通过start创建线程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class MyRunnable implements Runnable &#123; </div><div class="line">  ... </div><div class="line">  public void run() &#123; </div><div class="line">    //这里是新线程需要执行的任务 </div><div class="line">  &#125;</div><div class="line">&#125; </div><div class="line">Runnable r = new MyRunnable();</div><div class="line">Thread t = new Thread(r);</div></pre></td></tr></table></figure>
+<h6 id="3-两种创建方式的对比"><a href="#3-两种创建方式的对比" class="headerlink" title="3. 两种创建方式的对比"></a>3. 两种创建方式的对比</h6><h5 id="3"><a href="#3" class="headerlink" title="3."></a><strong><em>3.</em></strong></h5><h5 id="4"><a href="#4" class="headerlink" title="4."></a><strong><em>4.</em></strong></h5><h5 id="5"><a href="#5" class="headerlink" title="5."></a><strong><em>5.</em></strong></h5><h5 id="6"><a href="#6" class="headerlink" title="6."></a><strong><em>6.</em></strong></h5><h5 id="7"><a href="#7" class="headerlink" title="7."></a><strong><em>7.</em></strong></h5><h5 id="8"><a href="#8" class="headerlink" title="8."></a><strong><em>8.</em></strong></h5><h5 id="9"><a href="#9" class="headerlink" title="9."></a><strong><em>9.</em></strong></h5><h5 id="10"><a href="#10" class="headerlink" title="10."></a><strong><em>10.</em></strong></h5>
       
 
       
@@ -915,11 +920,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
